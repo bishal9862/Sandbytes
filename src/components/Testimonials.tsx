@@ -1,4 +1,5 @@
-import { Star, Quote, UserCircle2, Building2, Globe } from 'lucide-react';
+import React from 'react';
+import { Star, Quote, UserCircle2, Building2, Globe, Heart } from 'lucide-react';
 
 export default function Testimonials() {
   const testimonials = [
@@ -8,7 +9,7 @@ export default function Testimonials() {
       website: 'tripurago.vercel.app',
       content: 'Sandbyte built our travel portal from scratch. The integration of TTDCL circuits and the seamless WhatsApp booking flow has significantly improved our customer conversion rate.',
       rating: 5,
-      icon: <Globe className="text-cyan-600" size={24} />,
+      icon: <Globe className="text-purple-600" size={20} />,
     },
     {
       name: 'Ankan Mondal',
@@ -16,7 +17,7 @@ export default function Testimonials() {
       website: 'Fleket.com',
       content: 'The team at Sandbyte understands modern business scalability. They delivered a high-performance platform that is both aesthetically pleasing and technically robust.',
       rating: 5,
-      icon: <Building2 className="text-cyan-600" size={24} />,
+      icon: <Building2 className="text-purple-600" size={20} />,
     },
     {
       name: 'Alex Rivera',
@@ -24,91 +25,144 @@ export default function Testimonials() {
       website: 'adamandevefitnessstudio.com',
       content: 'Our fitness studio needed a strong digital presence. Sandbyte provided a website that perfectly captures our brand energy and makes it easy for members to view schedules.',
       rating: 5,
-      icon: <UserCircle2 className="text-cyan-600" size={24} />,
+      icon: <UserCircle2 className="text-purple-600" size={20} />,
+    },
+    {
+      name: 'Sarah Chen',
+      role: 'CEO, Nexus Lab',
+      website: 'nexuslab.io',
+      content: 'The attention to detail in the UI/UX design is unparalleled. Our engagement rates jumped by 40% after the redesign and migration to Next.js.',
+      rating: 5,
+      icon: <Globe className="text-purple-600" size={20} />,
     },
   ];
 
+  // Double the array for seamless looping
+  const firstRow = [...testimonials, ...testimonials];
+  const secondRow = [...testimonials, ...testimonials].reverse();
+
   return (
-    <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-cyan-600 font-black text-xs uppercase tracking-[0.3em]">
-            Testimonials
-          </span>
-          <h2 className="mt-3 text-4xl sm:text-5xl font-black text-gray-900 italic tracking-tighter uppercase">
-            Trusted by Innovators
-          </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto font-medium">
-            Hear directly from the founders who chose Sandbyte to bring their digital visions to life.
-          </p>
+    <section id="testimonials" className="py-32 bg-[#FDFCFM] overflow-hidden relative">
+      {/* Background Decorative Element */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-100/30 blur-[120px] rounded-full -z-10" />
+
+      <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
+        <div className="inline-flex items-center gap-2 bg-white border border-slate-200 shadow-sm px-4 py-1.5 rounded-full mb-6 animate-fade-in">
+          <Heart size={12} className="text-purple-500 fill-purple-500" />
+          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">Client Success Stories</span>
         </div>
+        
+        <h2 className="text-6xl md:text-7xl font-[1000] text-slate-900 tracking-tighter mb-6 leading-[0.9]">
+          Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-500 italic">visionaries.</span>
+        </h2>
+        
+        <p className="text-slate-500 text-lg font-medium max-w-2xl mx-auto leading-relaxed">
+          We don't just build software; we build the foundations for global businesses. Hear from the founders who scaled with us.
+        </p>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.name}
-              className="bg-gray-50 rounded-[2.5rem] p-8 relative border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-900/5 group"
-            >
-              <Quote className="text-cyan-200/50 absolute top-8 right-8 group-hover:text-cyan-200 transition-colors" size={48} />
+      {/* --- MARQUEE CONTAINER --- */}
+      <div className="relative flex flex-col gap-10">
+        
+        {/* Gradient Overlays (The "Fade" effect on the sides) */}
+        <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-[#FDFCFM] via-[#FDFCFM]/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-[#FDFCFM] via-[#FDFCFM]/80 to-transparent z-10 pointer-events-none" />
 
-              <div className="flex items-center space-x-1 mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="text-amber-400 fill-current" size={16} />
-                ))}
-              </div>
-
-              <p className="text-gray-700 leading-relaxed mb-8 font-medium italic relative z-10">
-                "{testimonial.content}"
-              </p>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-gray-100 group-hover:border-cyan-200 transition-all">
-                  {testimonial.icon}
-                </div>
-                <div>
-                  <div className="font-black text-gray-900 uppercase tracking-tight text-sm">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-[10px] font-bold text-cyan-600 uppercase tracking-widest">
-                    {testimonial.role}
-                  </div>
-                  <div className="text-[10px] font-medium text-gray-400 mt-1">
-                    {testimonial.website}
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* First Row: Moving Left */}
+        <div className="flex w-max animate-marquee-left hover:[animation-play-state:paused] py-4">
+          {firstRow.map((t, i) => (
+            <TestimonialCard key={`row1-${i}`} data={t} />
           ))}
         </div>
 
-        {/* Stats Banner */}
-        <div className="mt-20 bg-gray-900 rounded-[3rem] p-10 md:p-16 text-center text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-600/10 blur-[100px] rounded-full" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-600/10 blur-[100px] rounded-full" />
-          
-          <h3 className="text-3xl sm:text-4xl font-black italic uppercase tracking-tighter mb-4">
-            Delivering Excellence Globally
-          </h3>
-          <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto font-medium">
-            From local startups in Tripura to global business platforms, we maintain a 98% satisfaction rate.
-          </p>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 relative z-10">
-            <div className="space-y-2">
-              <div className="text-5xl font-black text-cyan-500 tracking-tighter italic">98%</div>
-              <div className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">Satisfaction Rate</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-5xl font-black text-cyan-500 tracking-tighter italic">4.9/5</div>
-              <div className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">Google Rating</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-5xl font-black text-cyan-500 tracking-tighter italic">24/7</div>
-              <div className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">Client Support</div>
-            </div>
-          </div>
+        {/* Second Row: Moving Right */}
+        <div className="flex w-max animate-marquee-right hover:[animation-play-state:paused] py-4">
+          {secondRow.map((t, i) => (
+            <TestimonialCard key={`row2-${i}`} data={t} />
+          ))}
         </div>
       </div>
+
+      {/* --- CUSTOM STYLES --- */}
+      <style>{`
+        @keyframes marquee-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .animate-marquee-left {
+          animation: marquee-left 50s linear infinite;
+        }
+        .animate-marquee-right {
+          animation: marquee-right 50s linear infinite;
+        }
+        .animate-fade-in {
+          animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </section>
   );
 }
+
+const TestimonialCard = ({ data }) => (
+  <div className="w-[450px] mx-5 bg-white border border-slate-100 rounded-[3rem] p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.03)] hover:shadow-[0_30px_60px_-15px_rgba(124,58,237,0.08)] hover:border-purple-200 transition-all duration-700 group relative">
+    {/* Floating Quote Icon */}
+    <div className="absolute top-8 right-10 text-slate-50 group-hover:text-purple-50 group-hover:scale-110 transition-all duration-700">
+      <Quote size={64} fill="currentColor" stroke="none" />
+    </div>
+    
+    <div className="relative z-10">
+      <div className="flex items-center gap-5 mb-8">
+        <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500 shadow-inner">
+          {React.cloneElement(data.icon, { className: "group-hover:text-white transition-colors" })}
+        </div>
+        <div>
+          <h4 className="font-black text-slate-900 text-base uppercase tracking-tight">{data.name}</h4>
+          <div className="flex items-center gap-1 mt-1">
+            {[...Array(data.rating)].map((_, i) => (
+              <Star key={i} size={12} className="text-amber-400 fill-current" />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <p className="text-slate-500 leading-[1.8] font-medium mb-10 text-[15px] italic">
+        "{data.content}"
+      </p>
+
+      <div className="pt-8 border-t border-slate-50 flex items-center justify-between">
+        <div>
+          <div className="text-[11px] font-black text-purple-600 uppercase tracking-[0.2em]">{data.role}</div>
+          <div className="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-widest">{data.website}</div>
+        </div>
+        <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500">
+          <ChevronRight size={14} className="text-purple-500" />
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// Added helper icon for the card
+const ChevronRight = ({ size, className }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="3" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="m9 18 6-6-6-6"/>
+  </svg>
+);

@@ -1,18 +1,21 @@
-import Hero from './components/Hero';
+
 import Services from './components/Services';
-import Portfolio from './components/Portfolio';
+
 import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
-import Navigation from './components/Navigation';
+import  Navbar  from './components/Navbar';
+import Hero  from './components/Hero';
+import Pricing from './components/Pricing';
+import AgencyPage from './components/AgencyPage';
+
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
-      <Hero />
-      <Services />
-      <Portfolio />
+      <Navbar />
+      <AgencyPage/>
+      <Pricing/>
       <Testimonials />
       <CTA />
       <Footer />

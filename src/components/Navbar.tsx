@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
             </svg>
           </div>
           <span className="text-xl font-black tracking-tight text-slate-900">
-            Capable
+            Sandbyte
           </span>
         </div>
 

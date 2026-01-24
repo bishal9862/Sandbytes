@@ -1,4 +1,8 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import React from 'react';
+import { 
+  Facebook, Twitter, Instagram, Linkedin, 
+  Mail, Phone, MapPin, ExternalLink, ArrowUpRight 
+} from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -31,119 +35,130 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-950 text-gray-400 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+    <footer className="bg-[#090A0F] text-slate-400 relative overflow-hidden pt-20 pb-10">
+      {/* Background Grid Effect */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
-          {/* Brand Section */}
-          <div className="lg:col-span-2 space-y-6">
-            <a href="#" className="text-3xl font-black text-white tracking-tighter uppercase italic">
-              Sand<span className="text-cyan-500">byte</span>
-            </a>
-            <p className="text-sm leading-relaxed max-w-sm font-medium">
-              Empowering Indian startups and global brands with high-performance digital products.
-            </p>
+          {/* Brand Identity Section */}
+          <div className="lg:col-span-5 space-y-8">
+            <div className="space-y-4">
+              <a href="#" className="text-4xl font-[1000] text-white tracking-tighter uppercase flex items-center gap-2">
+                Sand<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 italic">byte</span>
+                <div className="w-2 h-2 bg-purple-500 rounded-full" />
+              </a>
+              <p className="text-lg leading-relaxed max-w-sm font-medium text-slate-500">
+                Architecting high-performance digital ecosystems for the next generation of Indian innovators.
+              </p>
+            </div>
             
-            <div className="space-y-4 pt-4">
-              <a href="mailto:mail2bongguy@gmail.com" className="flex items-center space-x-3 group hover:text-white transition-colors">
-                <div className="p-2 bg-white/5 rounded-lg group-hover:bg-cyan-500/10 group-hover:text-cyan-500 transition-all">
-                  <Mail size={18} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+              <a href="mailto:mail2bongguy@gmail.com" className="group p-4 bg-white/5 border border-white/5 rounded-2xl hover:border-purple-500/30 transition-all">
+                <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2">Inquiries</p>
+                <div className="flex items-center gap-2 text-white font-bold group-hover:text-purple-400 transition-colors">
+                  <Mail size={16} /> <span className="text-sm">Email Us</span>
                 </div>
-                <span className="text-sm font-bold tracking-tight">mail2bongguy@gmail.com</span>
               </a>
               
-              <a href="tel:+917031139797" className="flex items-center space-x-3 group hover:text-white transition-colors">
-                <div className="p-2 bg-white/5 rounded-lg group-hover:bg-cyan-500/10 group-hover:text-cyan-500 transition-all">
-                  <Phone size={18} />
+              <a href="tel:+917031139797" className="group p-4 bg-white/5 border border-white/5 rounded-2xl hover:border-blue-500/30 transition-all">
+                <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2">Direct Line</p>
+                <div className="flex items-center gap-2 text-white font-bold group-hover:text-blue-400 transition-colors">
+                  <Phone size={16} /> <span className="text-sm">+91 70311 39797</span>
                 </div>
-                <span className="text-sm font-bold tracking-tight">+91 70311 39797</span>
               </a>
-
-              <div className="flex items-center space-x-3 group">
-                <div className="p-2 bg-white/5 rounded-lg text-cyan-500">
-                  <MapPin size={18} />
-                </div>
-                <span className="text-sm font-bold tracking-tight text-gray-500">Kolkata, India</span>
-              </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6">Featured Work</h3>
-            <ul className="space-y-4">
-              {footerLinks.services.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="hover:text-cyan-500 transition-colors text-xs font-bold flex items-center gap-2"
-                  >
-                    {link.label}
-                    {link.href.startsWith('http') && <ExternalLink size={10} />}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Spacer for Desktop */}
+          <div className="hidden lg:block lg:col-span-1"></div>
 
-          <div>
-            <h3 className="text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6">Company</h3>
-            <ul className="space-y-4">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="hover:text-cyan-500 transition-colors text-xs font-bold"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Links Sections */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:col-span-6 gap-8">
+            <div className="space-y-6">
+              <h3 className="text-white text-[11px] font-black uppercase tracking-[0.3em]">Featured Work</h3>
+              <ul className="space-y-4">
+                {footerLinks.services.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="hover:text-purple-400 transition-colors text-xs font-bold flex items-center gap-1.5 group">
+                      {link.label}
+                      <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6">Support</h3>
-            <ul className="space-y-4">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="hover:text-cyan-500 transition-colors text-xs font-bold"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="space-y-6">
+              <h3 className="text-white text-[11px] font-black uppercase tracking-[0.3em]">Company</h3>
+              <ul className="space-y-4">
+                {footerLinks.company.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="hover:text-purple-400 transition-colors text-xs font-bold">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-6 col-span-2 sm:col-span-1">
+              <h3 className="text-white text-[11px] font-black uppercase tracking-[0.3em]">Support</h3>
+              <ul className="space-y-4">
+                {footerLinks.legal.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="hover:text-purple-400 transition-colors text-xs font-bold">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-[10px] font-black uppercase tracking-widest text-gray-600">
-            © {currentYear} Sandbyte Studio. Built with Precision.
+        {/* Bottom Bar: Stats & Socials */}
+        <div className="pt-10 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-10">
+          
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center text-white font-black">S</div>
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600">
+                © {currentYear} Sandbyte Studio <span className="mx-2">|</span> Kolkata, WB
+              </p>
+            </div>
+            
+            <div className="flex items-center gap-2 px-4 py-1.5 bg-emerald-500/5 border border-emerald-500/10 rounded-full">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-[9px] font-black uppercase tracking-widest text-emerald-500/80">Systems Fully Operational</span>
+            </div>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-3">
             {socialLinks.map((social) => {
               const Icon = social.icon;
               return (
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-cyan-600 hover:text-white hover:-translate-y-1 transition-all duration-300"
+                  className="w-12 h-12 bg-white/5 border border-white/5 rounded-2xl flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500 group"
+                  aria-label={social.label}
                 >
-                  <Icon size={18} />
+                  <Icon size={20} className="group-hover:scale-110 transition-transform" />
                 </a>
               );
             })}
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-widest text-gray-500">System Online</span>
-          </div>
+        </div>
+
+        {/* Huge Background Text */}
+        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 select-none opacity-[0.02] whitespace-nowrap">
+           <span className="text-[15rem] font-[1000] tracking-tighter uppercase italic">SANDBYTE</span>
         </div>
       </div>
     </footer>

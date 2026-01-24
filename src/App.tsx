@@ -15,9 +15,9 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <AgencyPage/>
-      <Pricing/>
-      <Testimonials />
-      <CTA />
+      
+     
+   
       <Footer />
     </div>
   );

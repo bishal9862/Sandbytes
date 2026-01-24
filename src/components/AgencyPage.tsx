@@ -131,11 +131,11 @@ const AgencyPage = () => {
           <div className="absolute inset-y-0 left-0 w-24 md:w-64 bg-gradient-to-r from-[#FDFCFM] to-transparent z-10" />
           <div className="absolute inset-y-0 right-0 w-24 md:w-64 bg-gradient-to-l from-[#FDFCFM] to-transparent z-10" />
           <div className="flex w-max animate-marquee gap-16 md:gap-32 items-center whitespace-nowrap opacity-20 grayscale transition-opacity group-hover:opacity-40">
-            {['MICROSOFT', 'ADOBE', 'TATA', 'RELIANCE', 'STRIPE', 'NEXT.JS', 'VERCEL', 'GOOGLE'].map((brand, i) => (
+            {['TripuraFly', 'Fliket', 'Gym', 'Safari', 'STRIPE', 'NEXT.JS', 'VERCEL', 'GOOGLE'].map((brand, i) => (
               <span key={i} className="text-2xl md:text-4xl font-black tracking-[0.2em]">{brand}</span>
             ))}
             {/* Duplicate for seamless loop */}
-            {['MICROSOFT', 'ADOBE', 'TATA', 'RELIANCE', 'STRIPE', 'NEXT.JS', 'VERCEL', 'GOOGLE'].map((brand, i) => (
+         {['TripuraFly', 'Fliket', 'Gym', 'Safari', 'STRIPE', 'NEXT.JS', 'VERCEL', 'GOOGLE'].map((brand, i) => (
               <span key={i+100} className="text-2xl md:text-4xl font-black tracking-[0.2em]">{brand}</span>
             ))}
           </div>

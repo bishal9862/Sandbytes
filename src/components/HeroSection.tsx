@@ -45,7 +45,7 @@ export const HeroSection: React.FC = () => {
   const infiniteProjects = useMemo(() => [...PROJECTS, ...PROJECTS, ...PROJECTS], []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center pt-16 md:pt-10 overflow-hidden bg-[#F4F4F4] selection:bg-zinc-900 selection:text-white">
+    <section className="mt-10 relative min-h-screen flex flex-col items-center pt-16 md:pt-10 overflow-hidden bg-[#F4F4F4] selection:bg-zinc-900 selection:text-white">
       
       {/* --- TOP FLOATING BADGE --- */}
       <motion.div 

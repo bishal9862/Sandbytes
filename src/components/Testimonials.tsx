@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const reviews = [
   {
     brand: "OSTIUM",
-    text: "Just writing to tell you what a pleasure it is to work with Kargul. The team was ultra responsive and turned design requests around quickly!",
+    text: "Just writing to tell you what a pleasure it is to work with Sandbyte. The team was ultra responsive and turned design requests around quickly!",
     author: "Blake Hunsicker",
     avatar: "/avatars/blake.jpg"
   },

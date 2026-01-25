@@ -19,7 +19,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-black/5 text-zinc-400 text-sm font-medium">
-          <p>© 2026. Kargul Studio</p>
+          <p>© 2026. Sandbyte Studio</p>
           <div className="flex gap-8 mt-4 md:mt-0">
             <a href="mailto:hello@Sandbyte" className="hover:text-zinc-900 transition-colors">hello@Sandbyte</a>
             <a href="#" className="hover:text-zinc-900 transition-colors">Twitter/X</a>

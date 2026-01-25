@@ -4,9 +4,9 @@ import { Mail, Calendar } from 'lucide-react';
 
 // Data for your projects
 const PROJECTS = [
-  { id: 1, img: '/assets/projects/work-1.jpg', link: 'https://example.com/project-1' },
-  { id: 2, img: '/assets/projects/work-2.jpg', link: 'https://example.com/project-2' },
-  { id: 3, img: '/assets/projects/work-3.jpg', link: 'https://example.com/project-3' },
+  { id: 1, img: 'assets/image1.png', link: 'https://example.com/project-1' },
+  { id: 2, img: 'assets/image2.png', link: 'https://example.com/project-2' },
+  { id: 3, img: 'assets/image2.png', link: 'https://example.com/project-3' },
   { id: 4, img: '/assets/projects/work-4.jpg', link: 'https://example.com/project-4' },
 ];
 

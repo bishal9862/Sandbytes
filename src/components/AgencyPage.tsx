@@ -6,7 +6,7 @@ import {
   MessageCircle,
   Phone,
 } from 'lucide-react';
-import Pricing from './Pricing';
+import Pricing from './PricingFAQ';
 import Testimonials from './Testimonials';
 import CTA from './CTA';
 import Footer from './Footer';
